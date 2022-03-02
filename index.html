@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('a038d76c5142a8952293032bbe572077');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '파이오니아 특별 모임',
+        description: '3월 12일 토 오후 1시 30분',
+        imageUrl:
+          'https://cdn.pixabay.com/photo/2013/05/11/20/44/spring-flowers-110671_960_720.jpg',
+        link: {
+          mobileWebUrl: 'https://zoom.us/j/9933331914?pwd=aUJiN3BDd1h4Ym10aTFjNVo3SkFqZz09',
+          webUrl: 'https://zoom.us/j/9933331914?pwd=aUJiN3BDd1h4Ym10aTFjNVo3SkFqZz09',
+        },
+      },
+      buttons: [
+        {
+          title: '꽃을 누르시면, 줌이 바로 열립니다.',
+          link: {
+            mobileWebUrl: 'https://zoom.us/j/9933331914?pwd=aUJiN3BDd1h4Ym10aTFjNVo3SkFqZz09',
+            webUrl: 'https://zoom.us/j/9933331914?pwd=aUJiN3BDd1h4Ym10aTFjNVo3SkFqZz09',
+          },
+        },
+      ],
+    })
+  }
+</script>
+<!-- www.blackcats4567.com -->
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
+  </body>
+</html>
